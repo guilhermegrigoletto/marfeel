@@ -10,17 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.guilherme.marfeel.configuration.AppInitializer;
 import com.guilherme.marfeel.configuration.SpringJPAConfiguration;
 import com.guilherme.marfeel.configuration.WebConfig;
 import com.guilherme.marfeel.rest.URLRepresentation;
-import com.guilherme.marfeel.service.WebCrawlerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = { AppInitializer.class,
 		SpringJPAConfiguration.class, WebConfig.class})
+@Transactional
 public class WebCrawlerServiceIT {
 	
 	@Autowired
